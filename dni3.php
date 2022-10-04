@@ -19,12 +19,13 @@
         $letra=$letras[$resto];
         echo "<p>Su DNI completo es: {$i}{$letra}</p>";
         }else echo "<p>El DNI introduccido no es valido</p>"; 
-    }else    echo "<form name='formulario' method='get' action='http://localhost/ejercicio/dni3.php'>
-            <div class='formu'>
+    }else   
+     echo "<form name='formulario' method='get' action='http://localhost/ejercicio/dni3.php'>
             <label for='var'>Introduzca usu dni</label><br>
-        <input type='text'name='var' id='var' >
-        <input type='submit'/>"
-        "<a href="dni.php?var=53810433">Haga click si ya tiene el dni registrado</a>"
+             <input type='text'name='var' id='var' >
+             <input type='submit'/>
+           </form>"
+        ;
 
 
       
