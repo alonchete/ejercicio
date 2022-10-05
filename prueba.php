@@ -10,8 +10,7 @@
 <body>
     <table>
     <?php
-     isset($_POST["var"]) ? $i = $_POST["var"] : $i=0
-     ;
+     isset($_POST["var"]) ? $i = $_POST["var"] : $i=0;
 
     echo "<th> Tabla del $i  </th>";
     for ($x = 1; $x < 11; $x++) {
