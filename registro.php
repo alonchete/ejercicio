@@ -51,26 +51,7 @@
 
         
 
-      
-=======
-    if(isset($_REQUEST["sexo"])){    
-        isset($_POST["sexo"]) ? $i = $_POST["sexo"]: " ";
-        echo $i;
      
-    }else   
-     echo "<form name='formulario' method='post' action='http://localhost/ejercicio/ejercicio/registro.php'>
-             <input type='radio' name='sexo' id='hombre'>Hombre</input>
-             <input type='radio' name='sexo' id='mujer'>Mujer</input>
-
-
-
-
-
-
-             <input type='submit'/>
-           </form>"
-        ;
->>>>>>> 5b57efe2a08d2fa7b6f7c09bd845998414cf8469
 
     ?>
 </body>
