@@ -2,11 +2,8 @@
 <html lang=”en”>
 
 <head>
-<<<<<<< HEAD
+
     <link rel="stylesheet" href="estilos.css" type="text/css">
-=======
-    <link rel="stylesheet" href="style.css" type="text/css">
->>>>>>> 5b57efe2a08d2fa7b6f7c09bd845998414cf8469
     <meta charset=”UTF-8″ />
     <title>dni</title>
 </head>
@@ -14,7 +11,6 @@
 <body>
     <?php
     
-<<<<<<< HEAD
     if(isset($_REQUEST["sexo"]) and isset($_REQUEST["idiomas"]) and isset($_REQUEST["nombre"])and isset($_REQUEST["apellidos"])){ 
         
          $sx = $_POST["sexo"];
