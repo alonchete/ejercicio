@@ -2,6 +2,7 @@
 <html lang=”en”>
 
 <head>
+
     <link rel="stylesheet" href="estilos.css" type="text/css">
     <meta charset=”UTF-8″ />
     <title>dni</title>
@@ -47,7 +48,8 @@
 
         
 
-      
+    
+     
 
     ?>
 </body>
