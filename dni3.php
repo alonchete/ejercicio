@@ -24,7 +24,7 @@
             <label for='var'>Introduzca usu dni</label><br>
         <input type='text'name='var' id='var' >
         <input type='submit'/>"
-        "<a href="dni.php?var=53810433">Haga click si ya tiene el dni registrado</a>"
+        "<a href='dni.php?var=53810433'>Haga click si ya tiene el dni registrado</a>"
 
 
       
