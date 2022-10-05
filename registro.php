@@ -2,11 +2,7 @@
 <html lang=”en”>
 
 <head>
-<<<<<<< HEAD
     <link rel="stylesheet" href="estilos.css" type="text/css">
-=======
-    <link rel="stylesheet" href="style.css" type="text/css">
->>>>>>> 5b57efe2a08d2fa7b6f7c09bd845998414cf8469
     <meta charset=”UTF-8″ />
     <title>dni</title>
 </head>
@@ -14,7 +10,6 @@
 <body>
     <?php
     
-<<<<<<< HEAD
     if(isset($_REQUEST["sexo"]) and isset($_REQUEST["idiomas"]) and isset($_REQUEST["nombre"])and isset($_REQUEST["apellidos"])){ 
         
          $sx = $_POST["sexo"];
@@ -44,7 +39,8 @@
              <input type='checkbox' name='idiomas[]' value='ingles'> ingles</input>
              <input type='checkbox' name='idiomas[]' value='español'> español</input>
              <input type='checkbox' name='idiomas[]' value='italiano'> italiano</input>
-             <input type='checkbox' name='idiomas[]' value='chino'> chino</input><br>
+             <input type='checkbox' name='idiomas[]' value='Frances'> Frances</input><br>
+             <input type='checkbox' name='idiomas[]' value='Portugués'> Portugués</input><br>
              <input type='submit'/>
             </form>
             "
@@ -52,25 +48,6 @@
         
 
       
-=======
-    if(isset($_REQUEST["sexo"])){    
-        isset($_POST["sexo"]) ? $i = $_POST["sexo"]: " ";
-        echo $i;
-     
-    }else   
-     echo "<form name='formulario' method='post' action='http://localhost/ejercicio/ejercicio/registro.php'>
-             <input type='radio' name='sexo' id='hombre'>Hombre</input>
-             <input type='radio' name='sexo' id='mujer'>Mujer</input>
-
-
-
-
-
-
-             <input type='submit'/>
-           </form>"
-        ;
->>>>>>> 5b57efe2a08d2fa7b6f7c09bd845998414cf8469
 
     ?>
 </body>
