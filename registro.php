@@ -17,10 +17,11 @@ $aficiones = array("Música","Boxeo","Videojuegos","Bailar");
     if(isset($_REQUEST["sexo"])  and isset($_REQUEST["nombre"])and 
     isset($_REQUEST["apellidos"]) and isset($_REQUEST["nacionalidad"]) and isset($_REQUEST["aficiones"])  ){ 
         
+        
          $sx = $_POST["sexo"];
          if( isset($_REQUEST["idiomas"]) ){
          $id = $_POST["idiomas"];
-         }else $id = array("Sin especificar ");
+         }else $id = array("Sin especificar");
          $nm = $_POST["nombre"];
          $ap = $_POST["apellidos"];
          $na = $_POST["nacionalidad"];
