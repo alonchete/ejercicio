@@ -24,8 +24,6 @@
                 'Comprar' => ["Buy","Bought","Bought"],
                 'Conducir' => ["Drive","Drove","Driven"],
                 'Obtener' => ["Get","Got","Gott"],
-
-                
                   );
              
                 echo "<form>";

@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="fichero.css" type="text/css">
     <meta charset=”UTF-8″ />
-    <title>Curriculum</title>
+    <title>dni</title>
 </head>
 
 <body>
@@ -14,10 +14,10 @@
 $nacion = array("Española", "Inglesa", "Francesa","Argentina", "Uruguaya" );
 $aficiones = array("Música","Boxeo","Videojuegos","Bailar");
     
-    if(isset($_REQUEST["sexo"])  and isset($_REQUEST["nombre"])and isset($_REQUEST["dni"])and 
+    if(isset($_REQUEST["sexo"])  and isset($_REQUEST["nombre"]) and 
     isset($_REQUEST["apellidos"]) and isset($_REQUEST["nacionalidad"]) and isset($_REQUEST["aficiones"])  ){ 
         
-         $dni = $_POST["dni"];
+        
          $sx = $_POST["sexo"];
          if( isset($_REQUEST["idiomas"]) ){
          $id = $_POST["idiomas"];
@@ -27,51 +27,49 @@ $aficiones = array("Música","Boxeo","Videojuegos","Bailar");
          $na = $_POST["nacionalidad"];
          $af = $_POST["aficiones"];
         
-         echo "<div class='datos'>";
-        echo "<h1 class='titulo'>$nm $ap </h1>";
+        echo "<table>";
+        echo "<tr><td>Nombre</td> <td>$nm</td></tr>";
+        echo "<tr><td>Apellidos</td><td>$ap</td></tr>";
+        echo "<tr><td>Sexo</td> <td>$sx</td></tr>";
+       
+        echo "<tr><td>Idiomas</td>";
+        foreach($id as $valor){
+        echo "<td>$valor</td>";
+        }
+        echo "</tr>";
+        echo "<tr><td>Aficion</td>";
 
-        if ($_FILES['imagen']['type'] == "image/gif" or $_FILES['imagen']['type'] == "image/png" ){
+        foreach($af as $valor){
+            echo "<td>$valor</td>";
+            }
+
+        echo "</tr>";
+        echo "<tr><td>Nacionalidad</td> <td>$na</td></tr>";
+
+        echo "</table>";
+
+        if ($_FILES['imagen']['type'] == "image/gif" or $_FILES['imagen']['type'] == "image/jpeg" ){
             if (is_uploaded_file ($_FILES['imagen']['tmp_name'] )){
                 $nombreDirectorio = "img/";
                 $nombreFichero = $_FILES['imagen']['name'];
                 $nombreCompleto = $nombreDirectorio.$nombreFichero;
                 if (is_dir($nombreDirectorio)){ // es un directorio existente
                     $idUnico = time();
-                    $nombreFichero = $idUnico."-".$nombreFichero;
+                    $nombreFichero = $idUnico.".".$nombreFichero;
                     $nombreCompleto = $nombreDirectorio.$nombreFichero;
                     move_uploaded_file ($_FILES['imagen']['tmp_name'],$nombreCompleto);
+                    echo "Fichero subido con el nombre: $nombreFichero<br>";
                     }
                     else echo'Directorio definitivo inválido';
                     }
                    else
                     echo "No se ha podido subir el fichero"; 
                 }else echo "Tipo de formato no valido";
-              echo  "<img class='foto' src='$nombreCompleto'>";
+              echo  "<img src='$nombreCompleto'>";
 
 
 
-        
-        echo "<h4>Nombre: </h4> <p>$nm $ap</p><br>";
-        echo "<h4>DNI:</h4> <p>$dni</p><br>";
 
-        echo "<h4>Sexooo:</h4> <p>$sx</p><br>";
-       
-        echo "<h4>Idiomas: </h4>";
-        foreach($id as $valor){
-        echo "<p>$valor </p>";
-        }
-        echo "<br>";
-        echo "<h4>Aficiones: </h4>";
-
-        foreach($af as $valor){
-            echo "<p>$valor</p><br>";
-            }
-
-        echo "<h4>Nacionalidad: </h4><p>$na</p><br>";
-
-        echo "</div>";
-
-       
       
     }else  { echo   "<form name='formulario' method='post' enctype='multipart/form-data'>
             <h4>Rellene todos los campos, no está registrado</h4>
@@ -79,12 +77,10 @@ $aficiones = array("Música","Boxeo","Videojuegos","Bailar");
              <input type='text' name='nombre'><br>
              <label>Apellidos</label><br>
              <input type='text' name='apellidos'><br>
-             <label>DNI</label><br>
-             <input type='text' name='dni'><br>
              <input type='radio' name='sexo' value='Hombre'> hombre</input>
              <input type='radio' name='sexo' value='Mujer'> mujer</input><br>
-             <input type='checkbox' name='idiomas[]' value='Ingles'> Ingles</input>
-             <input type='checkbox' name='idiomas[]' value='Español'> Español</input>
+             <input type='checkbox' name='idiomas[]' value='ingles'> ingles</input>
+             <input type='checkbox' name='idiomas[]' value='español'> español</input>
              <input type='checkbox' name='idiomas[]' value='italiano'> italiano</input>
              <input type='checkbox' name='idiomas[]' value='Frances'> Frances</input><br>
              <input type='checkbox' name='idiomas[]' value='Portugués'> Portugués</input><br>";
@@ -94,6 +90,7 @@ $aficiones = array("Música","Boxeo","Videojuegos","Bailar");
                     foreach($nacion as $valor){
                         echo "<option value='$valor'>$valor</option>";
                         } 
+                        
     echo "</select><br>";
             
            echo " <label>Aficiones</label><br>
