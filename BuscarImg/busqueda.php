@@ -31,10 +31,6 @@ if(isset($_REQUEST["nombre"]) and isset($_REQUEST["apellidos"])  ){
      <label>Apellidos</label><br>
      <input type='text' name='apellidos'><br>
      <input type='submit' value='Subir'/>";
-
-     
-     
-     ;
     ?>
 </body>
 
