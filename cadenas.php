@@ -14,19 +14,35 @@
 
             return $pajarA
         }    */
-        $pajar = "ana irene palma irene palma xalma  ";
-        $aguja = "palma";
-        $posicion = strrpos($pajar, $aguja);
-        $sum = 0;
-        strrpos($pajar, "x");
 
-        while(strpos($pajar, $aguja)!=false){
-            $posicion = strpos($pajar, $aguja);
-            $sum += $posicion;
-           // echo "posicion {$sum}";
-            $pajar = substr($pajar, $posicion + 1);
-        }
+        $p = "ana irene palma palma oscar palma pablo palmita palma";
+        $a = "palma";
+
+
+        function buscar($aguja, $pajar){
+        $posicion = 0;
+        $posiciones = array();
+        $x = 0;
+        do{      
+
+            $posicion = strpos($pajar, $aguja, $posicion + 1);
+            $posiciones[$x] = $posicion;
+            $recorte = substr($pajar, $posicion);
+            $x += 1;
+
+        }while(strpos(substr($recorte, 1), $aguja)!==false);
+        return $posiciones;  
+        
+
+}
+
+   $recorrer=buscar($a, $p);
+
+   foreach ($recorrer as  $valor){
+    echo "<p>$valor</p>";
+   }
+
     ?>
-</body>
+</body> 
 
 </html>
